@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest Style Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #20232a;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .pin {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pin img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .pin-content {
+      padding: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #20232a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pinterest Style Page</h1>
+</header>
+
+<main>
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/1e/24/ac/1e24ac6b1b172ab649a295926a64666d.jpg" alt="Pin 1">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/b8/99/73/b89973e103e283f138517782df39f88a.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/22/23/b4/2223b4903dc4b43494a48c98674b011c.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/65/38/24/65382447d835e442b6409d27593f2c18.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/b5/15/f9/b515f9add84c857133f2873cdeb1c861.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/13/e8/66/13e866eb8d15833b55d4182c8425318d.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+
+  <!-- Add more pins as needed -->
+
+</main>
+
+<footer>
+  <p>&copy; 2023 Pinterest Style Page</p>
+</footer>
+
+</body>
+</html>
