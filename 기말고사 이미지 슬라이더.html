@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바다 이미지 슬라이더</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .slider-container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Optional: Add styling to navigation buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider-wrapper">
+    <div class="slide">
+      <img src="C:\Users\82104\Desktop\바다１.jpeg" alt="바다 이미지 1">
+    </div>
+    <div class="slide">
+      <img src="C:\Users\82104\Desktop\바다２.jpg" alt="바다 이미지 2">5
+    </div>
+    <div class="slide">
+      <img src="C:\Users\82104\Desktop\바다5.jpg" alt="바다 이미지 3">
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+
+  <!-- Navigation buttons (optional) -->
+  <div class="prev">&#10094;</div>
+  <div class="next">&#10095;</div>
+</div>
+
+<script>
+  // JavaScript for slider functionality
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  document.querySelector('.next').addEventListener('click', () => {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateSlider();
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = totalSlides - 1;
+    }
+    updateSlider();
+  });
+
+  function updateSlider() {
+    const newTransformValue = -currentIndex * 100 + '%';
+    document.querySelector('.slider-wrapper').style.transform = `translateX(${newTransformValue})`;
+  }
+</script>
+
+</body>
+</html>
