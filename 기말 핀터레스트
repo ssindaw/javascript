@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest Style Page</title>
+  <style>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #20232a;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .pin {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pin img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .pin-content {
+      padding: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #20232a;
+      color: white;
+    }
+
+    .pin-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pin-modal img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pinterest Style Page</h1>
+</header>
+
+<main>
+  <!-- Your existing pin elements remain unchanged with the addition of a class 'pin-item' -->
+  <div class="pin pin-item">
+    <img src="https://i.pinimg.com/236x/1e/24/ac/1e24ac6b1b172ab649a295926a64666d.jpg" alt="Pin 1">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/b8/99/73/b89973e103e283f138517782df39f88a.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/22/23/b4/2223b4903dc4b43494a48c98674b011c.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/65/38/24/65382447d835e442b6409d27593f2c18.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+  </div>
+
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/b5/15/f9/b515f9add84c857133f2873cdeb1c861.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>2302557</p>
+    </div>
+  </div>
+  <div class="pin">
+    <img src="https://i.pinimg.com/236x/13/e8/66/13e866eb8d15833b55d4182c8425318d.jpg" alt="Pin 2">
+    <div class="pin-content">
+      <p>신재희</p>
+    </div>
+  <!-- Add more pins as needed -->
+
+</main>
+
+<footer>
+  <p>&copy; 2023 Pinterest Style Page</p>
+</footer>
+
+<!-- Add a modal for displaying the larger image -->
+<div class="pin-modal" id="pinModal">
+  <img id="modalImage" src="" alt="Modal Pin">
+</div>
+
+<script>
+  // Get all elements with class 'pin-item'
+  const pins = document.querySelectorAll('.pin-item');
+
+  // Get modal and modal image elements
+  const modal = document.getElementById('pinModal');
+  const modalImage = document.getElementById('modalImage');
+
+  // Add click event listener to each pin
+  pins.forEach(pin => {
+    pin.addEventListener('click', function() {
+      // Get the source of the clicked pin's image
+      const imageUrl = this.querySelector('img').src;
+
+      // Set the source of the modal image
+      modalImage.src = imageUrl;
+
+      // Show the modal
+      modal.style.display = 'flex';
+    });
+  });
+
+  // Add click event listener to close the modal when clicking outside the image
+  modal.addEventListener('click', function(event) {
+    if (event.target === this) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
